@@ -5,7 +5,7 @@
 // Importa Router de Express
 import { Router } from "express";
 
-// Importa los controladores
+// Importación de controladores
 import {
 
     listarUsuarios,
@@ -16,26 +16,33 @@ import {
 
 } from "../controllers/controller.usuario.js";
 
+// Middleware de autenticación
 import { verificarToken } from "../middleware/auth.middleware.js";
 
-// Crea el router
+// -------------------------
+// CREAR ROUTER
+// -------------------------
+
 const router = Router();
 
-// ------
-// RUTAS
-// ------
+// -------------------------
+// RUTAS USUARIOS
+// -------------------------
 
-// Obtener todos
+// Obtener todos los usuarios
 router.get("/usuarios", verificarToken, listarUsuarios);
 
-// Obtener uno
+// Obtener usuario por ID
 router.get("/usuarios/:id", verificarToken, obtenerUsuario);
 
-// Crear
+// Crear usuario
 router.post("/usuarios", verificarToken, crearUsuario);
 
-// Actualizar
+// Actualizar usuario
 router.put("/usuarios/:id", verificarToken, actualizarUsuario);
 
-// Eliminar
+// Eliminar usuario
 router.delete("/usuarios/:id", verificarToken, eliminarUsuario);
+
+// Exportar router
+export default router;

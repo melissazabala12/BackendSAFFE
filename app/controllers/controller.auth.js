@@ -16,6 +16,8 @@ export const login = async (req, res) => {
 
     try {
 
+        console.log(req.body);
+
         const { correo, contraseña } = req.body;
 
         // Busca el usuario por correo

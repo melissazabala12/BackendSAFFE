@@ -39,6 +39,9 @@ app.use(cors());
 app.use("/api", routeUsuario);
 
 app.use("/api", routeAuth);
+
+app.use(express.urlencoded({ extended: true }));
+
 // ---------------
 // RUTA DE PRUEBA
 // ---------------
