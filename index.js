@@ -14,6 +14,12 @@ import routeUsuario from "./app/routes/routes.usuario.js";
 
 import routeAuth from "./app/routes/routes.auth.js";
 
+import routeAcceso from "./app/routes/routes.acceso.js";
+
+import routeEscaneo from "./app/routes/routes.escaneo.js";
+
+import routeHistorial from "./app/routes/routes.historial.js";
+
 dotenv.config();
 
 // --------------------------
@@ -39,6 +45,13 @@ app.use(cors());
 app.use("/api", routeUsuario);
 
 app.use("/api", routeAuth);
+
+app.use("/api", routeAcceso);
+
+app.use("/api", routeEscaneo);
+
+app.use("/api", routeHistorial);
+
 
 app.use(express.urlencoded({ extended: true }));
 
