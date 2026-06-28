@@ -52,7 +52,6 @@ app.use("/api", routeEscaneo);
 
 app.use("/api", routeHistorial);
 
-
 app.use(express.urlencoded({ extended: true }));
 
 // ---------------
